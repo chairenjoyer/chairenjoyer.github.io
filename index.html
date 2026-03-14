@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Architektoniczne | Portfolio</title>
+  <meta name="description" content="Nowoczesne portfolio architekta na GitHub Pages." />
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --surface: #ffffff;
+      --text: #1e1e1a;
+      --muted: #6f6a61;
+      --line: #d9d2c7;
+      --accent: #4f5d4b;
+      --accent-2: #a58f74;
+      --max: 1200px;
+      --radius: 22px;
+      --shadow: 0 16px 40px rgba(22, 22, 18, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 243, 238, 0.82);
+      border-bottom: 1px solid rgba(217, 210, 199, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .button,
+    button {
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font: inherit;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover,
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .button-secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card {
+      background: var(--surface);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(217, 210, 199, 0.55);
+    }
+
+    .hero-copy {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 560px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      max-width: 11ch;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 56ch;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hero-card {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(217,210,199,0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 18px 20px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .hero-overlay strong { font-size: 1.08rem; }
+    .hero-overlay span { color: var(--muted); }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-head p {
+      max-width: 56ch;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      margin-bottom: 8px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      grid-column: span 4;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(217, 210, 199, 0.8);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(22, 22, 18, 0.12);
+    }
+
+    .project-card img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+
+    .project-body h3 {
+      font-size: 1.36rem;
+      margin-bottom: 10px;
+    }
+
+    .project-body p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid rgba(217, 210, 199, 0.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .values {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .value {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .value:first-child { border-top: 0; }
+
+    .value-index {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #efe7dc;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.04rem;
+    }
+
+    .timeline-item span,
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(217, 210, 199, 0.8);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card h3 {
+      font-size: 1.14rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .contact {
+      padding-bottom: 72px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #2b3127 0%, #4f5d4b 100%);
+      color: white;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .contact-list div {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 16px;
+      padding: 15px 16px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(79, 93, 75, 0.08);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about,
+      .contact-grid,
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-card {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero,
+      section {
+        padding: 28px 0;
+      }
+
+      .hero-grid,
+      .about,
+      .contact-grid,
+      .services-grid,
+      .projects-grid,
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-card {
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 28px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#start" class="brand">
+        <strong>Anna Kowalska</strong>
+        <span>Architekt · Portfolio</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Otwórz menu" id="menuToggle">Menu</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#projekty">Projekty</a>
+        <a href="#o-mnie">O mnie</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="button button-primary" href="#kontakt">Umów konsultację</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div>
+            <div class="eyebrow">Studio architektoniczne</div>
+            <h1>Projektuję przestrzenie z charakterem.</h1>
+            <p class="lead">
+              Tworzę nowoczesną architekturę mieszkaniową i wnętrza premium, łącząc funkcjonalność,
+              światło i ponadczasową materialność. Prowadzę projekty od koncepcji po nadzór autorski.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projekty">Zobacz realizacje</a>
+              <a class="button button-secondary" href="#o-mnie">Poznaj moje podejście</a>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>32+</strong>
+              <span>Zrealizowane projekty</span>
+            </div>
+            <div class="stat">
+              <strong>8 lat</strong>
+              <span>Doświadczenia projektowego</span>
+            </div>
+            <div class="stat">
+              <strong>4 kraje</strong>
+              <span>Projekty i współprace</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="Nowoczesny budynek o minimalistycznej bryle" />
+          <div class="hero-overlay">
+            <strong>Rezydencja Horizon House</strong>
+            <span>Warszawa · 2025 · Architektura jednorodzinna</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projekty">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Wybrane realizacje</div>
+            <h2>Portfolio projektów</h2>
+          </div>
+          <p>
+            Każdy projekt rozwijam w oparciu o kontekst miejsca, rytm codziennego życia inwestora
+            i precyzję detalu. Poniżej przykładowe realizacje do dalszej personalizacji.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Minimalistyczne wnętrze domu jednorodzinnego" />
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Dom jednorodzinny</span>
+                <span>2025</span>
+              </div>
+              <h3>Villa Atrium</h3>
+              <p>
+                Projekt domu otwartego na ogród wewnętrzny, z wyraźną strefą dzienną i ciepłą paletą materiałów naturalnych.
+              </p>
+              <div class="tags">
+                <span class="tag">Koncepcja</span>
+                <span class="tag">Projekt budowlany</span>
+                <span class="tag">Nadzór autorski</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Nowoczesny apartament z dużymi przeszkleniami" />
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Apartament premium</span>
+                <span>2024</span>
+              </div>
+              <h3>Apartament Riverside</h3>
+              <p>
+                Kompleksowy projekt wnętrz apartamentu z widokiem na rzekę, oparty na świetle, kamieniu i stolarce na wymiar.
+              </p>
+              <div class="tags">
+                <span class="tag">Wnętrza</span>
+                <span class="tag">Detale meblowe</span>
+                <span class="tag">Koordynacja wykonawcza</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="Budynek biurowy z elewacją z betonu i szkła" />
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Architektura komercyjna</span>
+                <span>2023</span>
+              </div>
+              <h3>Office Courtyard</h3>
+              <p>
+                Kameralny budynek biurowy z zielonym patio, zaprojektowany z naciskiem na ergonomię, światło dzienne i trwałość materiałów.
+              </p>
+              <div class="tags">
+                <span class="tag">Biurowiec</span>
+                <span class="tag">Fasada</span>
+                <span class="tag">Układ funkcjonalny</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-mnie">
+      <div class="container about">
+        <div class="panel">
+          <div class="eyebrow">O mnie</div>
+          <h2>Architektura, która pracuje dla ludzi.</h2>
+          <p>
+            Nazywam się Anna Kowalska i specjalizuję się w projektach architektury mieszkaniowej,
+            wnętrz prywatnych oraz kameralnych obiektów komercyjnych. Pracuję na styku estetyki,
+            funkcji i odpowiedzialnego procesu inwestycyjnego.
+          </p>
+          <p>
+            Prowadzę klientów przez cały proces: od analizy potrzeb i koncepcji, przez dokumentację,
+            po wsparcie na etapie realizacji. Dzięki temu projekt zachowuje spójność od pierwszego szkicu
+            do ostatniego detalu.
+          </p>
+
+          <div class="values">
+            <div class="value">
+              <div class="value-index">01</div>
+              <div>
+                <strong>Kontekst i proporcja</strong>
+                <p>Każdy obiekt wynika z miejsca, skali i relacji z otoczeniem.</p>
+              </div>
+            </div>
+            <div class="value">
+              <div class="value-index">02</div>
+              <div>
+                <strong>Materiały i światło</strong>
+                <p>Projektuję przestrzenie, które dobrze starzeją się w czasie.</p>
+              </div>
+            </div>
+            <div class="value">
+              <div class="value-index">03</div>
+              <div>
+                <strong>Proces bez chaosu</strong>
+                <p>Dbam o czytelną komunikację, harmonogram i priorytety inwestora.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="eyebrow">Doświadczenie</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>2022–obecnie · Własne studio</strong>
+              <span>Projekty indywidualne, wnętrza premium, nadzory autorskie</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2019–2022 · Pracownia projektowa XYZ</strong>
+              <span>Zabudowa mieszkaniowa wielorodzinna i projekty konkursowe</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2016–2019 · Współpraca międzynarodowa</strong>
+              <span>Koordynacja dokumentacji i modelowanie BIM</span>
+            </div>
+            <div class="timeline-item">
+              <strong>Uprawnienia i narzędzia</strong>
+              <p>AutoCAD, Revit, SketchUp, Rhino, Adobe CC, koordynacja branżowa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uslugi">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Zakres współpracy</div>
+            <h2>Usługi</h2>
+          </div>
+          <p>
+            Model współpracy dopasowuję do skali inwestycji — od pojedynczej konsultacji po prowadzenie pełnego procesu projektowego.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Koncepcja architektoniczna</h3>
+            <p>Układ funkcjonalny, bryła, analiza działki i kierunku rozwoju projektu.</p>
+          </article>
+          <article class="service-card">
+            <h3>Projekt budowlany</h3>
+            <p>Dokumentacja formalna i techniczna przygotowana do dalszych uzgodnień.</p>
+          </article>
+          <article class="service-card">
+            <h3>Projekt wnętrz</h3>
+            <p>Kompleksowe wnętrza z doborem materiałów, detali i wyposażenia.</p>
+          </article>
+          <article class="service-card">
+            <h3>Nadzór autorski</h3>
+            <p>Wsparcie na budowie i kontrola zgodności realizacji z założeniami projektu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <div class="eyebrow" style="color: rgba(255,255,255,0.85);">Kontakt</div>
+          <h2>Porozmawiajmy o Twoim projekcie.</h2>
+          <p>
+            Napisz kilka słów o inwestycji, lokalizacji i planowanym zakresie. Odpowiem z informacją,
+            jak może wyglądać współpraca i najbliższy termin konsultacji.
+          </p>
+
+          <div class="contact-list">
+            <div>
+              <strong>Email</strong><br />
+              <a href="mailto:hello@annakowalska.pl">hello@annakowalska.pl</a>
+            </div>
+            <div>
+              <strong>Telefon</strong><br />
+              <a href="tel:+48123456789">+48 123 456 789</a>
+            </div>
+            <div>
+              <strong>Lokalizacja</strong><br />
+              <span>Warszawa / projekty zdalne i stacjonarne</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="eyebrow">Formularz</div>
+          <form onsubmit="handleSubmit(event)">
+            <div class="field">
+              <label for="name">Imię i nazwisko</label>
+              <input id="name" name="name" type="text" placeholder="Jan Nowak" required />
+            </div>
+            <div class="field">
+              <label for="email">Adres e-mail</label>
+              <input id="email" name="email" type="email" placeholder="jan@przyklad.pl" required />
+            </div>
+            <div class="field">
+              <label for="message">Opisz projekt</label>
+              <textarea id="message" name="message" placeholder="Dom jednorodzinny, 180 m², działka pod Warszawą, etap koncepcji..." required></textarea>
+            </div>
+            <button class="button button-primary" type="submit">Wyślij zapytanie</button>
+            <small id="formMessage" style="color: var(--muted);"></small>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 Anna Kowalska Studio. Wszelkie prawa zastrzeżone.</span>
+      <span>Strona przygotowana pod GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const formMessage = document.getElementById('formMessage');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      formMessage.textContent = 'To jest formularz demonstracyjny. Pod GitHub Pages możesz podłączyć go np. do Formspree, Basin albo Netlify Forms.';
+    }
+  </script>
+</body>
+</html>
