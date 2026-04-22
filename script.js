@@ -67,6 +67,12 @@ const translations = {
     "lab4.title": "Zarządzanie sieciami komputerowymi",
     "lab4.body":
       "Rozwijałem praktykę z zakresu konfiguracji i zabezpieczania sieci, pracując z tematami związanymi z routingiem, segmentacją, dostępem administracyjnym, bezpieczeństwem warstwy 2 oraz materiałami i standardami kojarzonymi z ekosystemem Cisco.",
+    "lab5.title": "Automatyzacja i skrypty administracyjne",
+    "lab5.body":
+      "Tworzyłem skrypty w Pythonie i Bashu wspierające automatyzację zadań, analizę danych, przetwarzanie plików oraz usprawnienie pracy w środowiskach laboratoryjnych i administracyjnych.",
+    "lab6.title": "Praca z systemami Linux",
+    "lab6.body":
+      "Korzystałem z systemów Linux, w tym Kali Linux, podczas laboratoriów związanych z bezpieczeństwem, administracją, testami narzędzi oraz pracą w środowisku terminalowym.",
     "achievements.eyebrow": "Osiągnięcia",
     "achievements.title": "Wyniki i wyróżnienia",
     "achievements.itemTitle": "Stypendium Rektora",
@@ -141,6 +147,12 @@ const translations = {
     "lab4.title": "Computer network administration",
     "lab4.body":
       "I developed hands-on networking skills in configuration and security, working with routing, segmentation, secure administrative access, Layer 2 protection, and topics commonly associated with the Cisco ecosystem.",
+    "lab5.title": "Automation and administrative scripting",
+    "lab5.body":
+      "I created Python and Bash scripts supporting task automation, data processing, file handling, and workflow improvements in both laboratory and administrative environments.",
+    "lab6.title": "Working with Linux systems",
+    "lab6.body":
+      "I used Linux systems, including Kali Linux, during labs focused on security, administration, tool usage, and terminal-based work.",
     "achievements.eyebrow": "Achievements",
     "achievements.title": "Results and distinctions",
     "achievements.itemTitle": "Rector's Scholarship",
