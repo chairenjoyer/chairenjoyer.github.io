@@ -17,16 +17,6 @@ const translations = {
     "about.title": "O mnie",
     "about.body":
       "Buduję portfolio wokół praktycznego cyberbezpieczeństwa: od zabezpieczania aplikacji webowych i pipeline'ów CI/CD, przez izolację nośników USB, po projektowanie baz danych i analizę dużych zbiorów danych. Łączę podejście inżynierskie z analizą ryzyka i dbałością o bezpieczeństwo na każdym etapie projektu.",
-    "about.educationTitle": "Edukacja",
-    "about.educationBody":
-      "Student trzeciego roku na Wydziale Informatyki i Telekomunikacji, na kierunku cyberbezpieczeństwo ze specjalizacją bezpieczeństwo systemów informatycznych.",
-    "about.languagesTitle": "Języki",
-    "about.languagesBody":
-      "Język polski: ojczysty. Język angielski: poziom B2 w komunikacji pisemnej i ustnej.",
-    "about.focusTitle": "Obszary zainteresowań",
-    "about.focusBody":
-      "Bezpieczeństwo sieci i systemów, analiza incydentów, automatyzacja wdrożeń, testy bezpieczeństwa oraz praktyczne wykorzystanie narzędzi w środowiskach Linux i cloud.",
-    "about.toolsLabel": "Narzędzia i technologie",
     "projects.eyebrow": "Część projektowa",
     "projects.title": "Wybrane projekty",
     "project.common.scope": "Zakres",
@@ -87,10 +77,7 @@ const translations = {
     "achievements.title": "Wyniki i wyróżnienia",
     "achievements.itemTitle": "Stypendium Rektora",
     "achievements.itemBody":
-      "Trzykrotne uzyskanie stypendium rektora na kierunku cyberbezpieczeństwo za wysokie wyniki w nauce i konsekwentny rozwój kompetencji technicznych.",
-    "certs.title": "Certyfikaty i kursy",
-    "certs.body":
-      "Wybrane szkolenia i certyfikaty potwierdzające rozwój w obszarze bezpieczeństwa chmury, sieci i cyberbezpieczeństwa praktycznego."
+      "Trzykrotne uzyskanie stypendium rektora na kierunku cyberbezpieczeństwo za wysokie wyniki w nauce i konsekwentny rozwój kompetencji technicznych."
   },
   en: {
     "nav.about": "About",
@@ -110,16 +97,6 @@ const translations = {
     "about.title": "About me",
     "about.body":
       "My portfolio is focused on practical cybersecurity: from securing web applications and CI/CD pipelines, through USB media isolation, to database design and large-scale data analysis. I combine engineering thinking with risk analysis and a security-first mindset throughout the project lifecycle.",
-    "about.educationTitle": "Education",
-    "about.educationBody":
-      "Third-year student at the Faculty of Information and Communication Technology, majoring in cybersecurity with a specialization in information systems security.",
-    "about.languagesTitle": "Languages",
-    "about.languagesBody":
-      "Polish: native. English: B2 level in spoken and written communication.",
-    "about.focusTitle": "Areas of interest",
-    "about.focusBody":
-      "Network and system security, incident analysis, deployment automation, security testing, and practical use of tools in Linux and cloud environments.",
-    "about.toolsLabel": "Tools and technologies",
     "projects.eyebrow": "Project section",
     "projects.title": "Selected projects",
     "project.common.scope": "Scope",
@@ -180,10 +157,7 @@ const translations = {
     "achievements.title": "Results and distinctions",
     "achievements.itemTitle": "Rector's Scholarship",
     "achievements.itemBody":
-      "Awarded the rector's scholarship three times in the cybersecurity program for strong academic performance and consistent development of technical skills.",
-    "certs.title": "Certificates and courses",
-    "certs.body":
-      "Selected training paths and certificates confirming ongoing development in cloud security, networking, and practical cybersecurity."
+      "Awarded the rector's scholarship three times in the cybersecurity program for strong academic performance and consistent development of technical skills."
   }
 };
 
