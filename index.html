@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Szymon Stolarski | Portfolio Cybersecurity</title>
+    <meta
+      name="description"
+      content="Dwujęzyczne portfolio studenta cyberbezpieczeństwa prezentujące projekty z zakresu DevSecOps, bezpieczeństwa USB, baz danych, analizy danych i praktyki laboratoryjnej."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#start">SS</a>
+        <nav class="nav">
+          <a href="#about" data-i18n="nav.about">O mnie</a>
+          <a href="#projects" data-i18n="nav.projects">Projekty</a>
+          <a href="#labs" data-i18n="nav.labs">Praktyka</a>
+          <a href="#achievements" data-i18n="nav.achievements">Osiągnięcia</a>
+        </nav>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn active" data-lang="pl" type="button">PL</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero panel" id="start">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Portfolio studenta cyberbezpieczeństwa</p>
+            <h1 data-i18n="hero.name">Szymon Stolarski</h1>
+            <p class="hero-lead" data-i18n="hero.lead">
+              Student cyberbezpieczeństwa rozwijający kompetencje w obszarze bezpieczeństwa aplikacji,
+              chmury, analizy danych oraz administracji systemami.
+            </p>
+            <div class="hero-meta">
+              <div>
+                <span data-i18n="hero.roleLabel">Rola</span>
+                <strong data-i18n="hero.roleValue">Student cyberbezpieczeństwa</strong>
+              </div>
+              <div>
+                <span data-i18n="hero.uniLabel">Uczelnia</span>
+                <strong data-i18n="hero.uniValue">Politechnika Wrocławska</strong>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card-label" data-i18n="hero.cardLabel">Główne obszary</p>
+            <ul class="hero-tags">
+              <li>DevSecOps</li>
+              <li>AWS</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>Kubernetes</li>
+              <li>Security Testing</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="about panel" id="about">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="about.eyebrow">Profil</p>
+            <h2 data-i18n="about.title">O mnie</h2>
+          </div>
+          <p data-i18n="about.body">
+            Buduję portfolio wokół praktycznego cyberbezpieczeństwa: od zabezpieczania aplikacji webowych i
+            pipeline'ów CI/CD, przez izolację nośników USB, po projektowanie baz danych i analizę dużych
+            zbiorów danych. Łączę podejście inżynierskie z analizą ryzyka i dbałością o bezpieczeństwo na
+            każdym etapie projektu.
+          </p>
+        </section>
+
+        <section class="projects" id="projects">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="projects.eyebrow">Część projektowa</p>
+            <h2 data-i18n="projects.title">Wybrane projekty</h2>
+          </div>
+
+          <article class="project-card panel">
+            <div class="card-top">
+              <div>
+                <p class="project-index">01</p>
+                <h3 data-i18n="project1.title">CI/CD i bezpieczne wdrożenie aplikacji webowej do AWS</h3>
+              </div>
+              <span class="pill" data-i18n="project1.pill">DevSecOps</span>
+            </div>
+            <p data-i18n="project1.body">
+              Projekt stanowił część większej inicjatywy związanej z zabezpieczeniem aplikacji webowej.
+              Przygotowałem pipeline GitHub Actions, który automatyzuje testy, analizę bezpieczeństwa,
+              budowanie obrazu kontenera, publikację do Amazon ECR, wdrożenie do klastra Amazon EKS oraz
+              końcową kontrolę DAST z użyciem OWASP ZAP.
+            </p>
+            <div class="details-grid">
+              <div>
+                <h4 data-i18n="project.common.scope">Zakres</h4>
+                <p data-i18n="project1.scope">
+                  Testy aplikacji, skan SAST Bandit, skan obrazu Trivy, uwierzytelnianie OIDC do AWS,
+                  rollout na Kubernetes oraz walidacja wdrożenia i dostępności aplikacji.
+                </p>
+              </div>
+              <div>
+                <h4 data-i18n="project.common.impact">Rezultat</h4>
+                <p data-i18n="project1.impact">
+                  Powstał spójny proces dostarczania, który łączy automatyzację z kontrolami bezpieczeństwa
+                  i umożliwia regularne, powtarzalne wdrożenia w środowisku chmurowym.
+                </p>
+              </div>
+            </div>
+            <ul class="stack">
+              <li>GitHub Actions</li>
+              <li>Python 3.11</li>
+              <li>Bandit</li>
+              <li>Trivy</li>
+              <li>AWS ECR</li>
+              <li>AWS EKS</li>
+              <li>OWASP ZAP</li>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+            </ul>
+          </article>
+
+          <article class="project-card panel">
+            <div class="card-top">
+              <div>
+                <p class="project-index">02</p>
+                <h3 data-i18n="project2.title">SafeGate USB: izolowana stacja sanityzacji nośników danych</h3>
+              </div>
+              <span class="pill" data-i18n="project2.pill">Endpoint Security</span>
+            </div>
+            <p data-i18n="project2.body">
+              SafeGate USB to koncepcja bezpiecznej „śluzy” dla nieznanych nośników USB. System wykrywa
+              nowe urządzenia, blokuje automatyczne montowanie na hoście, przekazuje nośnik do
+              odizolowanej maszyny wirtualnej i uruchamia proces analizy przed dopuszczeniem urządzenia do
+              użycia w środowisku wewnętrznym.
+            </p>
+            <div class="details-grid">
+              <div>
+                <h4 data-i18n="project.common.scope">Zakres</h4>
+                <p data-i18n="project2.scope">
+                  Automatyczna detekcja zdarzeń `udev`, kontrola przepływu USB do maszyny gościnnej,
+                  obliczanie sum SHA-256, weryfikacja w VirusTotal API i generowanie czytelnego werdyktu
+                  bezpieczeństwa.
+                </p>
+              </div>
+              <div>
+                <h4 data-i18n="project.common.impact">Rezultat</h4>
+                <p data-i18n="project2.impact">
+                  Projekt pokazuje praktyczne podejście do ograniczania ryzyka związanego z autorun,
+                  BadUSB i niezweryfikowanymi nośnikami poprzez izolację, automatyzację i analizę
+                  reputacyjną plików.
+                </p>
+              </div>
+            </div>
+            <ul class="stack">
+              <li>Python</li>
+              <li>Linux</li>
+              <li>pyudev</li>
+              <li>VirtualBox</li>
+              <li>VirusTotal API</li>
+              <li>SHA-256</li>
+            </ul>
+          </article>
+
+          <article class="project-card panel">
+            <div class="card-top">
+              <div>
+                <p class="project-index">03</p>
+                <h3 data-i18n="project3.title">Relacyjna baza danych SQL dla stołówki</h3>
+              </div>
+              <span class="pill" data-i18n="project3.pill">Database Design</span>
+            </div>
+            <p data-i18n="project3.body">
+              Projekt obejmował zaprojektowanie systemu wspierającego codzienną pracę stołówki:
+              obsługę zamówień, zarządzanie menu, kontrolę stanów magazynowych, historię sprzedaży oraz
+              raportowanie. Kluczowym elementem było zbudowanie logicznego modelu danych i odwzorowanie
+              ról pracowników w systemie.
+            </p>
+            <div class="details-grid">
+              <div>
+                <h4 data-i18n="project.common.scope">Zakres</h4>
+                <p data-i18n="project3.scope">
+                  Analiza biznesowa, wymagania funkcjonalne i niefunkcjonalne, RBAC dla pracowników,
+                  scenariusze użycia, ERD oraz implementacja tabel dla obszarów takich jak zamówienia,
+                  magazyn, menu dnia, przepisy, pozycje zamówień i faktury.
+                </p>
+              </div>
+              <div>
+                <h4 data-i18n="project.common.impact">Rezultat</h4>
+                <p data-i18n="project3.impact">
+                  Powstał projekt bazy, który porządkuje proces operacyjny, wspiera raportowanie przychodów
+                  i zużycia składników oraz uwzględnia bezpieczeństwo danych logowania i podział uprawnień.
+                </p>
+              </div>
+            </div>
+            <ul class="stack">
+              <li>SQL</li>
+              <li>ERD</li>
+              <li>RBAC</li>
+              <li>MS Access</li>
+              <li>Data Modeling</li>
+              <li>Reporting</li>
+            </ul>
+          </article>
+
+          <article class="project-card panel">
+            <div class="card-top">
+              <div>
+                <p class="project-index">04</p>
+                <h3 data-i18n="project4.title">Przetwarzanie dużego zbioru danych i analiza kolizji drogowych</h3>
+              </div>
+              <span class="pill" data-i18n="project4.pill">Data Analysis</span>
+            </div>
+            <p data-i18n="project4.body">
+              W projekcie analizowałem masowy zbiór danych NYC Open Data dotyczący kolizji drogowych.
+              Zakres prac obejmował pobranie danych z API Socrata, przygotowanie procesu ETL,
+              oczyszczenie ponad 2,2 mln rekordów oraz wykonanie analiz statystycznych i przestrzennych.
+            </p>
+            <div class="details-grid">
+              <div>
+                <h4 data-i18n="project.common.scope">Zakres</h4>
+                <p data-i18n="project4.scope">
+                  Czyszczenie danych w Pythonie, walidacja atrybutów geograficznych, inżynieria cech
+                  czasowych, agregacje statystyczne, wykresy w Matplotlib oraz mapy punktowe i heatmapy w
+                  Folium.
+                </p>
+              </div>
+              <div>
+                <h4 data-i18n="project.common.impact">Rezultat</h4>
+                <p data-i18n="project4.impact">
+                  Analiza pozwoliła wskazać dominujące przyczyny kolizji, wzorce czasowe, najbardziej
+                  obciążone dzielnice oraz przestrzenne punkty krytyczne, a przy tym pokazała umiejętność
+                  pracy z danymi w skali big data.
+                </p>
+              </div>
+            </div>
+            <ul class="stack">
+              <li>Python</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>Folium</li>
+              <li>Socrata API</li>
+              <li>ETL</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="labs" id="labs">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="labs.eyebrow">Kompetencje praktyczne</p>
+            <h2 data-i18n="labs.title">Praktyka laboratoryjna i operacyjna</h2>
+          </div>
+          <div class="mini-grid">
+            <article class="mini-card panel">
+              <h3 data-i18n="lab1.title">Testy penetracyjne aplikacji webowych</h3>
+              <p data-i18n="lab1.body">
+                Realizowałem zadania związane z wykrywaniem i analizą podatności takich jak XSS,
+                clickjacking, brute-force oraz SQL injection. Ćwiczenia obejmowały identyfikację wektorów
+                ataku, ocenę ryzyka oraz wskazywanie działań naprawczych zwiększających odporność
+                aplikacji.
+              </p>
+            </article>
+            <article class="mini-card panel">
+              <h3 data-i18n="lab2.title">Zarządzanie projektem IT</h3>
+              <p data-i18n="lab2.body">
+                Pracowałem z backlogiem w JIRA oraz dokumentacją projektową, w tym kartą projektu. Dzięki
+                temu rozwijałem umiejętność planowania zadań, priorytetyzacji wymagań, opisu zakresu,
+                ryzyk, interesariuszy i etapów realizacji inicjatyw IT.
+              </p>
+            </article>
+            <article class="mini-card panel">
+              <h3 data-i18n="lab3.title">Ćwiczenia chmurowe w AWS</h3>
+              <p data-i18n="lab3.body">
+                W ramach laboratoriów budowałem podstawowe środowiska w AWS, konfigurując m.in. sieci
+                VPC, grupy bezpieczeństwa, load balancery, reguły WAF oraz elementy wdrożeniowe wspierające
+                dostępność i ochronę aplikacji działających w chmurze.
+              </p>
+            </article>
+            <article class="mini-card panel">
+              <h3 data-i18n="lab4.title">Zarządzanie sieciami komputerowymi</h3>
+              <p data-i18n="lab4.body">
+                Rozwijałem praktykę z zakresu konfiguracji i zabezpieczania sieci, pracując z tematami
+                związanymi z routingiem, segmentacją, dostępem administracyjnym, bezpieczeństwem warstwy 2
+                oraz materiałami i standardami kojarzonymi z ekosystemem Cisco.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="achievements panel" id="achievements">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="achievements.eyebrow">Osiągnięcia</p>
+            <h2 data-i18n="achievements.title">Wyniki i wyróżnienia</h2>
+          </div>
+          <div class="achievement-box">
+            <p class="achievement-number">3x</p>
+            <div>
+              <h3 data-i18n="achievements.itemTitle">Stypendium Rektora</h3>
+              <p data-i18n="achievements.itemBody">
+                Trzykrotne uzyskanie stypendium rektora na kierunku cyberbezpieczeństwo za wysokie wyniki
+                w nauce i konsekwentny rozwój kompetencji technicznych.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
